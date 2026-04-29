@@ -3,7 +3,7 @@ import {getValidAccessToken} from './MicrosoftManageTokens';
 
 // Set the following values to reflect each item
 let teamsMessage = "For your current meeting, people are using the NSD5-24-Crecendo Room."
-let teamsBotId = "teamsBotUuid"
+let teamsBotId = "replace with Teams Bot UUID"
 
 // the following values should not be changed (global values)
 let token = ""
