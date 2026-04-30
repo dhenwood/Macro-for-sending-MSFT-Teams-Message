@@ -14,25 +14,29 @@ The setup steps are splits into two halves: provisioning the service account (En
 * Set a strong password manually (don't auto-generate — you need to keep it)
 
 **Assign a Teams-capable license**
+
 The account needs an actual Teams license — being a "user" isn't enough; Teams provisioning happens on first sign-in to a licensed account. Any of these SKUs works:
 * Microsoft 365 Business Basic / Standard / Premium
 * Microsoft 365 E3 / E5
 * Office 365 E1 / E3 / E5
 * Or the standalone Microsoft Teams Essentials / Teams Enterprise SKU
 
-Assign via Users → [the account] → Licenses → Assignments.
+Assign the license via Users → [the account] → Licenses → Assignments.
 From the overview tab for the new user, copy the "Object ID" value to notepad.
 
 **Sign in to Teams once, interactively**
+
 This is the step people skip and then wonder why messages fail. Open teams.microsoft.com in a private browser, sign in as the service account, accept any first-run prompts. This provisions the user's chat service backend. Until this happens, POST /chats will throw weird "user not found in Teams" errors.
 
 **Lock the account down**
+
 Since you're keeping a password (or a long-lived refresh token) for an account with real privileges, compensate:
 * Disable interactive sign-in from anywhere except where your service runs (Conditional Access named locations)
 * No admin roles
 * Rotate the password on a schedule
 
 **Register the app**
+
 In Entra → App registrations → New registration:
 * Name: e.g. teams-bot-graph-client
 * Supported account types: single tenant
@@ -45,6 +49,7 @@ After creation:
 Copy the Application (client) ID and Directory (tenant) ID to Notepad.
 
 **Acquire a token (device-code flow)**
+
 A number of HTTP REST calls need to be made. Install [Postman](https://postman.com/). 
 
 Request a device code via 
@@ -71,8 +76,11 @@ grant_type=urn:ietf:params:oauth:grant-type:device_code
 Copy the refresh_token.
 
 **Configure the video device**
+
 Install and upload each of the 3 macros provided as part of this repo, but do not enable them yet.
 Select the "MicrosoftManageTokens" macro then update the value for clientId, tenantId and TEAMS_BOT_ID.
 Select the "MicrosoftSavedTokens" macro and update the refresh_token value (leave the other values as they are)
 
-Enable the "MicrosoftSendMessage" macro. 
+Enable the "MicrosoftSendMessage" macro.
+
+From the video device, select the newly added "Teams Message" button. Enter the partial or full name of someone. Select Confirm. That person should now receive a Microsoft Teams message.
