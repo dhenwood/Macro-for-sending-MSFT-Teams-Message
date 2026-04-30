@@ -78,8 +78,8 @@ Copy the refresh_token.
 **Configure the video device**
 
 Install and upload each of the 3 macros provided as part of this repo, but do not enable them yet.
-Select the "MicrosoftManageTokens" macro then update the value for clientId, tenantId and TEAMS_BOT_ID.
-Select the "MicrosoftSavedTokens" macro and update the refresh_token value (leave the other values as they are)
+Select the "MicrosoftManageTokens" macro then update the values for the CLIENT_ID, TENANT_ID and TEAMS_USER_OBJECT_ID. Save updated macro.
+Select the "MicrosoftSavedTokens" macro and update the refresh_token value (leave the other values as they are). Save the updated macro.
 
 Enable the "MicrosoftSendMessage" macro.
 
