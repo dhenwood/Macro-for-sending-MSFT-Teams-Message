@@ -1,5 +1,5 @@
 import xapi from 'xapi';
-import {getValidAccessToken, TEAMS_BOT_ID} from './MicrosoftManageTokens';
+import {getValidAccessToken, TEAMS_USER_OBJECT_ID} from './MicrosoftManageTokens';
 
 // Set the following values to reflect each item
 let teamsMessage = "For your current meeting, people are using the NSD5-24-Crecendo Room."
@@ -63,7 +63,7 @@ async function getChatId(id) {
     {
       "@odata.type": "#microsoft.graph.aadUserConversationMember",
       "roles": ["owner"],
-      "user@odata.bind": "https://graph.microsoft.com/v1.0/users('${teamsBotId}')"
+      "user@odata.bind": "https://graph.microsoft.com/v1.0/users('${TEAMS_USER_OBJECT_ID}')"
     },
     {
       "@odata.type": "#microsoft.graph.aadUserConversationMember",
