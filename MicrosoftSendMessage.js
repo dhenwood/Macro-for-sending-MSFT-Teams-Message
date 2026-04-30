@@ -1,7 +1,7 @@
 import xapi from 'xapi';
 import {getValidAccessToken, TEAMS_USER_OBJECT_ID} from './MicrosoftManageTokens';
 
-// Set the following values to reflect each item
+// Set the following message to reflect what you would like sent
 let teamsMessage = "For your current meeting, people are using the NSD5-24-Crecendo Room."
 
 // the following values should not be changed (global values)
