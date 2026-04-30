@@ -1,9 +1,8 @@
 import xapi from 'xapi';
-import {getValidAccessToken} from './MicrosoftManageTokens';
+import {getValidAccessToken, TEAMS_BOT_ID} from './MicrosoftManageTokens';
 
 // Set the following values to reflect each item
 let teamsMessage = "For your current meeting, people are using the NSD5-24-Crecendo Room."
-let teamsBotId = "replace with Teams Bot UUID"
 
 // the following values should not be changed (global values)
 let token = ""
