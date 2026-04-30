@@ -2,7 +2,7 @@ import xapi from 'xapi';
 
 const CLIENT_ID = 'replace with ClientID';
 const TENANT_ID = 'replace with Tenant ID'
-export const TEAMS_BOT_ID = "replace with Teams object ID"
+export const TEAMS_USER_OBJECT_ID = "replace with Teams object ID"
 const SCOPE = 'ChatMessage.Send Chat.Create User.Read offline_access'
 const SAVED_TOKEN_FILE = "MicrosoftSavedTokens"
 const OBTAIN_ACCESS_TOKEN_URL = `https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token`
